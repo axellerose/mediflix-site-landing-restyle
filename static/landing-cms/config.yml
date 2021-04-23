@@ -1,0 +1,295 @@
+backend:
+  name: gitlab
+  repo: mediflix-group/mediflix-site
+  auth_type: implicit
+  app_id: 1699ceefcb336c6f4cd0ac6a4cff37cd8a4b5f46d17ec69f4284197b40bcfbc8 # Application ID from your GitLab settings
+  api_root: https://gitlab.fgp.dev/api/v4
+  base_url: https://gitlab.fgp.dev
+  auth_endpoint: oauth/authorize
+
+media_folder: static/img
+public_folder: /img
+
+# local_backend: true
+
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - file: "src/pages/home/index.md"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Browser Tab Title",
+                    name: "browserTitle",
+                    widget: "string",
+                  },
+                ],
+            }
+          - { label: "Path", name: "path", widget: "string" }
+          - {
+              label: "Intro",
+              name: "intro",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Description", name: "description", widget: "text" },
+                  { label: "Background", name: "background", widget: "image" },
+                  { label: "Logo", name: "logo", widget: "image" },
+                  { label: "Launching", name: "launching", widget: "image" },
+                ],
+            }
+          - {
+              label: "Patient Centric",
+              name: "patientCentric",
+              widget: "object",
+              fields: [{ label: "Text", name: "text", widget: "string" }],
+            }
+          - {
+              label: "App Screens",
+              name: "appScreens",
+              widget: "object",
+              fields:
+                [{ label: "Background", name: "background", widget: "image" }],
+            }
+          - {
+              label: "Free",
+              name: "free",
+              widget: "object",
+              fields:
+                [
+                  { label: "Text", name: "text", widget: "string" },
+                  {
+                    label: "Button Text",
+                    name: "buttonText",
+                    widget: "string",
+                  },
+                  { label: "Devices", name: "devices", widget: "image" },
+                ],
+            }
+          - {
+              label: "Available",
+              name: "available",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Text", name: "text", widget: "string" },
+                  { label: "Devices", name: "devices", widget: "image" },
+                ],
+            }
+      - file: "src/pages/about/index.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - {
+              label: "Headline",
+              name: "headline",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Text", name: "text", widget: "text" },
+                ],
+            }
+          - {
+              label: "Available",
+              name: "availableAt",
+              widget: "list",
+              fields:
+                [
+                  { label: "Icon", name: "icon", widget: "image" },
+                  { label: "Alt text", name: "alt", widget: "string" },
+                ],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Browser Tab Title",
+                    name: "browserTitle",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Content",
+              name: "content",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Image", name: "preview", widget: "image" },
+                  { label: "Text", name: "text", widget: "text" },
+                ],
+            }
+      - file: "src/pages/team/index.md"
+        label: "The Project Team Page"
+        name: "team"
+        fields:
+          - {
+              label: "Headline",
+              name: "headline",
+              widget: "object",
+              fields: [{ label: "Title", name: "title", widget: "string" }],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Browser Tab Title",
+                    name: "browserTitle",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Tabs",
+              name: "tabs",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Tab Items",
+                    name: "items",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Name", name: "name", widget: "string" },
+                        {
+                          label: "Position",
+                          name: "position",
+                          widget: "string",
+                        },
+                        { label: "Image", name: "preview", widget: "image" },
+                        { label: "Text", name: "text", widget: "text" },
+                      ],
+                  },
+                ],
+            }
+      - file: "src/pages/contact-us/index.md"
+        label: "Contact Us"
+        name: "contactUs"
+        fields:
+          - {
+              label: "Headline",
+              name: "headline",
+              widget: "object",
+              fields: [{ label: "Title", name: "title", widget: "string" }],
+            }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Browser Tab Title",
+                    name: "browserTitle",
+                    widget: "string",
+                  },
+                ],
+            }
+          - {
+              label: "Contact Through App",
+              name: "contactThroughApp",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Image", name: "image", widget: "image" },
+                ],
+            }
+          - {
+              label: "Live Chat",
+              name: "liveChat",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Text", name: "text", widget: "text" },
+                  { label: "Image", name: "image", widget: "image" },
+                ],
+            }
+          - {
+              label: "Call Us",
+              name: "callUsNumber",
+              widget: "object",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  { label: "Text", name: "text", widget: "text" },
+                ],
+            }
+      - file: "src/pages/dev/index.md"
+        label: "Under Development"
+        name: "dev"
+        fields:
+          - { label: "Path", name: "path", widget: "string" }
+          - {
+              label: "SEO & Meta",
+              name: "seo",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "Browser Tab Title",
+                    name: "browserTitle",
+                    widget: "string",
+                  },
+                ],
+            }
+      - file: "src/global/index.md"
+        label: "Global"
+        name: "global"
+        fields:
+          - {
+              label: "Header",
+              name: "header",
+              widget: "object",
+              fields: [{ label: "Logo", name: "logo", widget: "image" }],
+            }
+          - {
+              label: "Links to stores",
+              name: "appLinks",
+              widget: "object",
+              fields:
+                [
+                  {
+                    label: "App Store",
+                    name: "apple",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Link", name: "link", widget: "string" },
+                        { label: "Badge", name: "badge", widget: "image" },
+                      ],
+                  },
+                  {
+                    label: "Google Play",
+                    name: "google",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: "Link", name: "link", widget: "string" },
+                        { label: "Badge", name: "badge", widget: "image" },
+                      ],
+                  },
+                ],
+            }

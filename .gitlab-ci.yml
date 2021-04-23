@@ -1,0 +1,24 @@
+build:
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  script:
+    - npm install --progress=false
+    - npm run build
+  artifacts:
+    paths:
+      - public
+  only:
+    refs:
+      - master
+
+deploy:
+  stage: deploy
+  script:
+    - cp -r /home/app/mediflix-site/public /home/app/mediflix-site/backup/
+    - rm -r /home/app/mediflix-site/public/*
+    - cp -r public /home/app/mediflix-site
+  only:
+    refs:
+      - master
